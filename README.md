@@ -13,6 +13,7 @@ This module is meant for use with Terraform 0.12.
 Basic usage is as follows for creation of activity tracker instance:
 
 ```hcl
+
 provider "ibm" {
 }
 
@@ -20,9 +21,9 @@ data "ibm_resource_group" "res_group" {
   name = var.resource_group
 }
 
-module "activity_tracker" {
-  source = "../../modules/activity_tracker"
-
+module "activity-tracker_instance" {
+  source  = "terraform-ibm-modules/activity-tracker/ibm//modules/instance"
+  
   service_name        = var.service_name
   plan                = var.plan
   region              = var.region
